@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Interns</title>
+	<link rel="icon" type="img/png" href="images/hng-favicon.png">
+	<link rel="stylesheet" href="css/dashboard.css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		.card {
+			height: 150px;
+			background: #ccc;
+			margin: 15px;
+			padding: 10px;
+			border-radius: 15px;
+			
+		}
+	</style>
+
+</head>
+<body>
+	<main>
+		<section id="overview-section">
+			<!-- <h1>Dashboard</h1> -->
+			<h2>Registered Interns </h2>
+			<!-- <section id="intern-section">
+				Populated by `js/dashboard.js` 
+			</section> -->
+
+			<div class="container">
+				<div class="row">
+
+                                        <!--<div class="col-md-3">-->
+                        <!--    <a href="exports/export-to-excel.php">-->
+                        <!--        <button type="button" id="export">Export to Spreadsheet</button>-->
+                        <!--    </a>-->
+                        <!--</div>-->
+                        <div class="col-md-3">
+                            <!--<a href="exports/export-to-pdf.php">-->
+                            <a href="#" onclick="javascript:printDiv('printablediv')">
+                                <button type="button" id="export">Export to PDF</button>
+                            </a>
+                        </div>
+                        <div id="printablediv">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>Name</th>
+                                    <th>Emai</th>
+                                    <th>Phone</th>
+                                    <!-- <th>Porfolio</th> -->
+                                    <th>CV</th>
+                                    <th>Exp</th>
+                                    <th>Interest</th>
+                                    <th>Location</th>
+                                    <th>Emp. Stat</th>
+                                    <th>About</th>
+                                    <th>Reg. Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>Adetunji Adegeye</td>
+                                    <td>tunjiincolet@gmail.com</td>
+                                    <td>8100925944</td>
+                                
+                                    <td>www.google.com</td>
+                                    <td>5</td>
+                                    <td>football</td>
+                                    <td>ondo</td>
+                                    <td>unemployed</td>
+                                    <td>i am me, and i know you like me.</td>
+                                    <td>2019-10-10 00:00:00</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Banjo Banky</td>
+                                    <td>bam@bam.com</td>
+                                    <td>08033001100</td>
+                                
+                                    <td>https://github.com/hngi/HNG6.0</td>
+                                    <td>2</td>
+                                    <td>Machine Learning</td>
+                                    <td>Minna</td>
+                                    <td>Senior</td>
+                                    <td>I am cutie</td>
+                                    <td>2019-10-16 05:04:35</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Jim Shuan</td>
+                                    <td>jim@shuan.com</td>
+                                    <td>223112334</td>
+                                
+                                    <td>https://github.com/hngi/HNG6.0</td>
+                                    <td>21</td>
+                                    <td>Mobile</td>
+                                    <td>Tokyo</td>
+                                    <td>Employed</td>
+                                    <td>Enroute to Forbes </td>
+                                    <td>2019-10-16 05:15:38</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Tony Bush</td>
+                                    <td>usa@president.gov</td>
+                                    <td>911</td>
+                                
+                                    <td>http://tony.bush.com</td>
+                                    <td>21</td>
+                                    <td>Software Dev</td>
+                                    <td>USA</td>
+                                    <td>Retired</td>
+                                    <td>Former four times USA President</td>
+                                    <td>2019-10-16 06:06:31</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Jonah Fish</td>
+                                    <td>jonah@fishbelly.com</td>
+                                    <td>12321223</td>
+                                
+                                    <td>https://jonah.com</td>
+                                    <td>5</td>
+                                    <td>Travelling</td>
+                                    <td>Lagos</td>
+                                    <td>Unemployed</td>
+                                    <td>Run for Baba Buhari</td>
+                                    <td>2019-10-16 08:58:12</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>test</td>
+                                    <td>test@yahoo.com</td>
+                                    <td>07030601520</td>
+                                
+                                    <td>link</td>
+                                    <td>55</td>
+                                    <td>codes</td>
+                                    <td>lagos</td>
+                                    <td>part</td>
+                                    <td>nothing for now</td>
+                                    <td>2019-10-23 00:00:00</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Latest</td>
+                                    <td>john.ebri@yahoo.com</td>
+                                    <td>07030601520</td>
+                                
+                                    <td>http://www.abc.com</td>
+                                    <td>1</td>
+                                    <td>mobile</td>
+                                    <td>calabar</td>
+                                    <td>fulltime</td>
+                                    <td>nothing for now</td>
+                                    <td>2019-10-17 08:43:48</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Sam</td>
+                                    <td>sam@gmail.com</td>
+                                    <td>090123123</td>
+                                
+                                    <td>abc</td>
+                                    <td>12</td>
+                                    <td>backend</td>
+                                    <td>yaba</td>
+                                    <td>fulltime</td>
+                                    <td>just ask me</td>
+                                    <td>2019-10-17 10:53:38</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Sam</td>
+                                    <td>sam@gmail.com</td>
+                                    <td>090123123</td>
+                                
+                                    <td>abc</td>
+                                    <td>12</td>
+                                    <td>backend</td>
+                                    <td>yaba</td>
+                                    <td>fulltime</td>
+                                    <td>just ask me</td>
+                                    <td>2019-10-17 10:53:38</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Faith Ngozi</td>
+                                    <td>faith@nngo.com</td>
+                                    <td>07007070707</td>
+                                
+                                    <td>www.portport.com</td>
+                                    <td>4</td>
+                                    <td>Dancing</td>
+                                    <td>Lagos</td>
+                                    <td>HouseWife</td>
+                                    <td>100 yards house wife</td>
+                                    <td>2019-10-17 10:58:08</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>dfdfd</td>
+                                    <td>john.ebri@yahoo.com</td>
+                                    <td>44444444444</td>
+                                
+                                    <td>dfdfdfd</td>
+                                    <td>3</td>
+                                    <td>fdfd</td>
+                                    <td>dfdfd</td>
+                                    <td>dfdfd</td>
+                                    <td>dfdfd</td>
+                                    <td>2019-10-17 11:31:03</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>John Ebri</td>
+                                    <td>john.ebri@yahoo.com1</td>
+                                    <td>07030601520</td>
+                                
+                                    <td>http://www.abc.com</td>
+                                    <td>1</td>
+                                    <td>mobile</td>
+                                    <td>Lagos</td>
+                                    <td>fulltime</td>
+                                    <td>fdf</td>
+                                    <td>2019-10-18 10:11:31</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>John Ebri</td>
+                                    <td>john.ebri@yahoo.com2</td>
+                                    <td>07030601520</td>
+                                
+                                    <td>http://www.abc.com</td>
+                                    <td>1</td>
+                                    <td>mobile</td>
+                                    <td>Lagos</td>
+                                    <td>fulltime</td>
+                                    <td>dfd df dfdfdfddf dffd</td>
+                                    <td>2019-10-18 10:18:24</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>dfdfd</td>
+                                    <td>johnssssss.ekkkri@yahoo.com</td>
+                                    <td>h</td>
+                                
+                                    <td>dfd</td>
+                                    <td>dd</td>
+                                    <td>dd</td>
+                                    <td>dd</td>
+                                    <td>ddd</td>
+                                    <td>dddd</td>
+                                    <td>2019-10-18 10:24:26</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Test</td>
+                                    <td>test@gmail.com</td>
+                                    <td>07030601520</td>
+                                
+                                    <td>http://www.something</td>
+                                    <td>5</td>
+                                    <td>java</td>
+                                    <td>lagos</td>
+                                    <td>fulltime</td>
+                                    <td>nothing for now</td>
+                                    <td>2019-10-20 00:45:39</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>Moses</td>
+                                    <td>mos@gmail.com</td>
+                                    <td>09090</td>
+                                
+                                    <td>http://www.something</td>
+                                    <td>4</td>
+                                    <td>java</td>
+                                    <td>lagos</td>
+                                    <td>fulltime</td>
+                                    <td>nothing again and again</td>
+                                    <td>2019-10-20 00:58:16</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>Ibrahim Oluwapeluwa</td>
+                                    <td>Ipeluwa@gmail.com</td>
+                                    <td>2349052220341</td>
+                                
+                                    <td>https://ipeluwa.com</td>
+                                    <td>5</td>
+                                    <td>Backend</td>
+                                    <td>Lagos state</td>
+                                    <td>Student</td>
+                                    <td>I'm very good at what i do</td>
+                                    <td>2019-10-20 18:34:38</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>Tommy O' Peters</td>
+                                    <td>tommyopeters@gmail.com</td>
+                                    <td>08172127320</td>
+                                
+                                    <td>https://adfadsf.adfa.daf.com</td>
+                                    <td>2</td>
+                                    <td>cvz</td>
+                                    <td>Lagos</td>
+                                    <td>xzcv</td>
+                                    <td>cxv</td>
+                                    <td>2019-10-20 21:50:43</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>last test</td>
+                                    <td>lastest@gmail.com</td>
+                                    <td>07030601520</td>
+                                
+                                    <td>http://www.abc.com</td>
+                                    <td>1</td>
+                                    <td>mobile</td>
+                                    <td>Lagos</td>
+                                    <td>fulltime</td>
+                                    <td>last test about me</td>
+                                    <td>2019-10-21 08:25:28</td>
+                                </tr>                            
+                            </tbody>
+                        </table>
+                        </div>
+                                            
+				</div>
+			</div>
+
+			<!-- <button id="export">Export to Spreadsheet</button> -->
+		
+		</section>
+		<!-- <section id="details-section">
+			<div id="details-back">
+                <div>
+                    <a href="overview.html" id="newitem-go-back" title="Go back">
+                        <div></div>
+                    </a>
+                </div>
+            </div>
+			<h2>Intern application details</h2>
+			<em id="no-intern">No intern selected</em>
+			<br />
+			<p>Name: <span id="details-name"></span></p>
+			<p>Email: <span id="details-email"></span></p>
+			<p>Age: <span id="details-age"></span></p>
+			<p>Phone Number: <span id="details-number"></span></p>
+			<p>Track of interest: <span id="details-track"></span></p>
+			<p>CV link: <span id="details-CV-link"></span></p>
+			<p>State of residence: <span id="details-state-of-residence"></span></p>
+			<div href="" id="details-return">Back to Overview</div>
+		</section> -->
+	</main>
+
+	<input type="checkbox" id="mobile-bars-check" />
+    <label for="mobile-bars-check" id="mobile-bars">
+        <div class="stix" id="stik1"></div>
+        <div class="stix" id="stik2"></div>
+        <div class="stix" id="stik3"></div>
+    </label>
+    
+    <section id="sidebar">
+		<div id="upper">
+			<img src="https://res.cloudinary.com/jaycodist/image/upload/v1570722683/mentors-first_qlquq9.png" height="100px">
+			<div id="username">John Ebri</div>
+			<em>Admin</em>
+		</div>
+		<nav id="lower">
+			<a href="index.php">Home </a>
+            <a href="dashboard.php">Dashboard</a>
+			<a href="registered_mentors.php">Mentors</a>
+			<a href="registered_interns.php">Interns</a>
+								<a href="admins.php">Admins</a>
+							
+			<!-- <select>
+				<option selected="selected" disabled="disabled">Overview</option>
+				<option value="0">Mentors</option>
+				<option value="1">Users</option>
+			</select>
+			<a href="#">Advanced</a> -->
+			<a href="./logout.php">Logout</a>
+		</nav>
+	</section>
+
+
+        <script src="js/jquery-3.4.1.js"></script>
+        <script src="js/jspdf.js"></script>
+        <script src="js/jspdf.plugin.autotable.min.js"></script>
+        <script src="js/paginator.js"></script>
+        <script>
+        function printDiv(divID) {
+            //Get the HTML of div
+            var divElements = document.getElementById(divID).innerHTML;
+            //Get the HTML of whole page
+            var oldPage = document.body.innerHTML;
+
+            //Reset the page's HTML with div's HTML only
+            document.body.innerHTML = `<html><head><title></title></head><body><br><br><br>${divElements}"</body>"`;
+
+            //Print Page
+            window.print();
+
+            //Restore orignal HTML
+            document.body.innerHTML = oldPage;
+        }
+
+                const mentorTable = document.querySelector("#table_mentors table")
+                const internTable = document.querySelector("#table_interns table")
+                const tableHeaders = document.querySelectorAll('.table-headers');
+                let sortDirection = false;
+                
+                //To create pages for the Mentor and Intern tables
+                const createPages =(tableDivId)=>{
+                    let box = paginator({
+                        table: document.getElementById(tableDivId).getElementsByTagName("table")[0],
+                        box_mode: "list",
+                });
+                    box.className = "box";
+                    document.getElementById(tableDivId).appendChild(box);
+                }
+
+                createPages('table_mentors')
+                createPages('table_interns')
+                
+                
+                //To convert the HTML table to an Array of Objects
+                const tableToArray=(table)=>{
+                    let data = [];
+                    // first row needs to be headers
+                    let headers = [];
+                    let test = [];
+                    for(let i=0; i<table.rows[0].cells.length; i++){
+            
+                        headers[i]=table.rows[0].cells[i].dataset.heading
+                        
+                    }
+                        data.push(headers);
+
+                    //iterate through the cells
+                    for(let i=1; i<table.rows.length; i++){
+                        let tableRow = table.rows[i];
+                        let rowData = {};
+
+                        for(let j=0; j<tableRow.cells.length; j++){
+                        rowData[headers[j]] = tableRow.cells[j].innerHTML;
+                        }
+                        data.push(rowData)
+                    }
+                    return data
+                }
+
+                //stores respective HTML tables in variables in the form of arrays
+                const mentorData = tableToArray(mentorTable)
+                const internData = tableToArray(internTable)
+
+                
+            //This function creates tableRows when fed an array of objects. 
+                const loadTable=(userData, tableBody)=>{
+                    
+                    let sn = 1
+                    let dataHTML = '';
+                    userData.forEach((user, index)=>{
+                       
+                        if(!Array.isArray(user)){
+                            dataHTML += `<tr class="table-input">
+                                            <th scope="row">${sn++}</th>
+                                            <td>${user.name}</td>
+                                            <td>${user.tracks}</td>
+                                            <td>${user.sex}</td>
+                                            <td>${user.phone}</td>
+                                            <td>${user.state}</td>
+                                        </tr>`
+                        }
+                    })
+                    tableBody.innerHTML = dataHTML;
+                }
+                
+
+            //Series of functions which work in tandem to sort data when sortup or sort down icon is clicked
+                const sortColumn =(columnName,userData,tableBody)=>{
+                    const dataType = typeof userData[1][columnName];
+                    
+                    sortDirection = !sortDirection;
+
+                    switch(dataType){
+                        case 'number':
+                            sortNumberColumn(sortDirection, columnName,userData);
+                            break;
+                        case 'string':
+                            sortStringColumn(sortDirection, columnName,userData);
+                            break;
+                    }
+                    loadTable(userData,tableBody)
+                }
+
+                const sortNumberColumn =(sortDirection,columnName)=>{
+                    userData = userData.sort((u1, u2)=>{
+                        return sortDirection ? u1[columnName] - u2[columnName] : u2[columnName] - u1[columnName] 
+                    })
+                }
+
+                const sortStringColumn =(sortDirection,columnName,userData)=>{
+                    if(sortDirection){
+                        userData = userData.sort((u1, u2)=> (u1[columnName] > u2[columnName]) ? 1: ((u2[columnName] > u1[columnName])? -1 : 0 ))
+                    }else{
+                        userData = userData.sort((u1, u2)=> (u1[columnName] > u2[columnName]) ? 1: ((u2[columnName] > u1[columnName])? -1 : 0 )).reverse()
+                    }
+                }
+
+                
+                tableHeaders.forEach(tableHeader => {
+                    tableHeader.addEventListener('click', (e)=>{
+                    
+                    if(e.target.tagName == 'I'){
+                        const tableBody = e.target.parentElement.parentElement.parentElement.nextElementSibling
+                        const columnName = e.target.parentElement.dataset.heading
+                        if(e.target.parentElement.classList.contains('prop-mentor')){
+                            sortColumn(columnName, mentorData,tableBody)
+                        }else if(e.target.parentElement.classList.contains('prop-intern')){
+                            sortColumn(columnName, internData, tableBody)
+                        }
+                            Array.from(e.target.parentElement.children).forEach(child=>{
+                            child.style.display = ""
+                        })
+                            e.target.style.display = "none"         
+                        }
+                })
+            })
+
+            
+
+             //EXPORT TO PDF             
+             const genPDF =()=>{
+                let doc = new jsPDF()
+                // doc.autoTable({html: '#my-table'});
+                doc.autoTable({
+                    head: toExportHead,
+                    body: toExportBody
+                });
+                doc.save('Lists.pdf')
+            }
+         
+             const pdfDownload = document.querySelectorAll('.btn-lg')
+             pdfDownload.forEach(btn=>{
+                let toExport;
+                 btn.addEventListener('click',(e)=>{
+                     if(e.target.id === "exportInterns"){
+                        toExport = inputForPDF(internData)
+                     }else if(e.target.id === "exportMentors"){
+                        toExport = inputForPDF(mentorData)
+                     }
+                     toExportHead = toExport.splice(0,1)
+                     toExportBody = toExport
+                    genPDF()
+                 })
+             })
+            
+             const inputForPDF =(userData)=>{
+                let newUserArray = [];
+                userData.forEach((user,index)=>{
+                    newUserArray[index] =[];
+                    for(key in user){
+                    newUserArray[index].push(user[key])
+                }
+                })
+                return newUserArray
+            }
+
+            //EXPORT TO CSV
+
+            
+
+        </script>
+</body>
+</html>
+
+<script type="text/javascript" src="js/dashboard.js"></script>

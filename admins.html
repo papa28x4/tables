@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Interns</title>
+	<link rel="icon" type="img/png" href="images/hng-favicon.png">
+	<link rel="stylesheet" href="css/dashboard.css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		.card {
+			height: 150px;
+			background: #ccc;
+			margin: 15px;
+			padding: 10px;
+			border-radius: 15px;
+			
+		}
+	</style>
+
+</head>
+<body>
+	<main>
+				<section id="overview-section">
+			<!-- <h1>Dashboard</h1> -->
+			<h2>Registered Admins </h2>
+			<!-- <section id="intern-section">
+				Populated by `js/dashboard.js` 
+			</section> -->
+
+			<div class="container">
+				<div class="row">
+
+                                        <div class="col-md-3">
+                            <a href="new_admin.php">
+                                <button type="button" id="export"> + New Admin</button>
+                            </a>
+                        </div>
+
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>SN</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Date of Registration</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                
+                    <tr>
+                        <td>1</td>
+                        <td>Olatunji</td>
+                        <td>Fatai</td>
+                        <td>sirhollyfat@gmail.com</td>
+                        <td>1</td>
+                        <td>2019-10-17 00:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Test</td>
+                        <td>test</td>
+                        <td>test@test.com</td>
+                        <td>2</td>
+                        <td>2019-10-17 11:51:10</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>John</td>
+                        <td>Ebri</td>
+                        <td>john.ebri@yahoo.com</td>
+                        <td>1</td>
+                        <td>2019-10-16 00:00:00</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Alex</td>
+                        <td>Sam</td>
+                        <td>alex@yahoo.com</td>
+                        <td>2</td>
+                        <td>2019-10-18 07:39:06</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>John</td>
+                        <td>Ebri</td>
+                        <td>john.ebri@yahoo.com</td>
+                        <td>2</td>
+                        <td>2019-10-18 07:51:59</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>John</td>
+                        <td>Ebri</td>
+                        <td>john.ebri@yahoo.com</td>
+                        <td>2</td>
+                        <td>2019-10-18 07:56:09</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>John</td>
+                        <td>Ebri</td>
+                        <td>john.ebri@yahoo.com</td>
+                        <td>2</td>
+                        <td>2019-10-18 07:59:38</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>John</td>
+                        <td>Ebri</td>
+                        <td>john.ebri@yahoo.com</td>
+                        <td>2</td>
+                        <td>2019-10-18 08:00:01</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>ggg</td>
+                        <td>ggggg</td>
+                        <td>g@g.com</td>
+                        <td>2</td>
+                        <td>2019-10-18 08:14:24</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>SAM</td>
+                        <td>PAUL</td>
+                        <td>sam@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-19 19:40:10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Ayeni</td>
+                        <td>Kehinde</td>
+                        <td>kenny4all40@gmail.com</td>
+                        <td>1</td>
+                        <td>2019-10-19 20:20:49</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>JOHN</td>
+                        <td>EBRI</td>
+                        <td>johnebri18@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-19 20:36:51</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Kike </td>
+                        <td>Adeyanhi</td>
+                        <td>kokomison@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-19 21:38:35</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Test</td>
+                        <td>Tester</td>
+                        <td>fabulousmeek@gmail.com</td>
+                        <td>1</td>
+                        <td>2019-10-19 22:57:22</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Ayeni</td>
+                        <td>Kehinde</td>
+                        <td>kenny4all40@yahoo.com</td>
+                        <td>2</td>
+                        <td>2019-10-20 09:21:34</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Alex</td>
+                        <td>Pemu</td>
+                        <td>alexispemu@yahoo.com</td>
+                        <td>1</td>
+                        <td>2019-10-20 11:01:20</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Alex</td>
+                        <td>Pemu</td>
+                        <td>alexism@yahoo.com</td>
+                        <td>1</td>
+                        <td>2019-10-20 11:25:51</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Alex</td>
+                        <td>Pemu</td>
+                        <td>pemuiroro@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-20 11:27:20</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Ayenko</td>
+                        <td>Ayenko</td>
+                        <td>eshy008@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-20 13:22:32</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Oluwapeluwa</td>
+                        <td>IBRAHIM </td>
+                        <td>Ipeluwa@gmail.com</td>
+                        <td>1</td>
+                        <td>2019-10-20 13:23:55</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Alexander</td>
+                        <td>Ibrahim</td>
+                        <td>peluwaibrahim@gmail.com</td>
+                        <td>1</td>
+                        <td>2019-10-20 13:30:23</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Eniola</td>
+                        <td>Agboola</td>
+                        <td>Agboola.eniola4031@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-20 16:40:09</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Emmanuel</td>
+                        <td>Owojori</td>
+                        <td>emmanuelboluwajib1@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-20 18:32:14</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>nmn</td>
+                        <td>nm</td>
+                        <td>nmmn@hj</td>
+                        <td>2</td>
+                        <td>2019-10-20 19:42:31</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Onifade</td>
+                        <td>Oluwaseyi</td>
+                        <td>gidxyluz@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-20 19:49:56</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>Ayeni</td>
+                        <td>Kehinde</td>
+                        <td>tutorialayenko@gmail.com</td>
+                        <td>2</td>
+                        <td>2019-10-21 05:04:06</td>
+                    </tr>                            </tbody>
+                        </table>
+                                            
+				</div>
+			</div>
+
+			<!-- <button id="export">Export to Spreadsheet</button> -->
+		
+		</section>
+		<!-- <section id="details-section">
+			<div id="details-back">
+                <div>
+                    <a href="overview.html" id="newitem-go-back" title="Go back">
+                        <div></div>
+                    </a>
+                </div>
+            </div>
+			<h2>Intern application details</h2>
+			<em id="no-intern">No intern selected</em>
+			<br />
+			<p>Name: <span id="details-name"></span></p>
+			<p>Email: <span id="details-email"></span></p>
+			<p>Age: <span id="details-age"></span></p>
+			<p>Phone Number: <span id="details-number"></span></p>
+			<p>Track of interest: <span id="details-track"></span></p>
+			<p>CV link: <span id="details-CV-link"></span></p>
+			<p>State of residence: <span id="details-state-of-residence"></span></p>
+			<div href="" id="details-return">Back to Overview</div>
+		</section> -->
+	</main>
+
+	<input type="checkbox" id="mobile-bars-check" />
+    <label for="mobile-bars-check" id="mobile-bars">
+        <div class="stix" id="stik1"></div>
+        <div class="stix" id="stik2"></div>
+        <div class="stix" id="stik3"></div>
+    </label>
+    
+    <section id="sidebar">
+		<div id="upper">
+			<img src="https://res.cloudinary.com/jaycodist/image/upload/v1570722683/mentors-first_qlquq9.png" height="100px">
+			<div id="username">John Ebri</div>
+			<em>Admin</em>
+		</div>
+		<nav id="lower">
+			<a href="index.php">Home </a>
+            <a href="dashboard.php">Dashboard</a>
+			<a href="registered_mentors.php">Mentors</a>
+			<a href="registered_interns.php">Interns</a>
+								<a href="admins.php">Admins</a>
+							
+			<!-- <select>
+				<option selected="selected" disabled="disabled">Overview</option>
+				<option value="0">Mentors</option>
+				<option value="1">Users</option>
+			</select>
+			<a href="#">Advanced</a> -->
+			<a href="./logout.php">Logout</a>
+		</nav>
+	</section>
+
+</body>
+</html>
+
+<script type="text/javascript" src="js/dashboard.js"></script>
