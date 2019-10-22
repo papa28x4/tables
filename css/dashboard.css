@@ -36,18 +36,18 @@ a{
 
 .searchBox {
 	position: absolute;
-	right: 23%;
+	right: 24%;
     border-radius: 30px;
     width:  250px;
 	height: 30px;
-	padding-left: 25px;
+	padding-left: 27px;
 	background-color: #FFFFFF;
 	outline: none;
   }
  
  .fas.fa-search{
 	  position: absolute;
-	  right: calc(23% + 225px);
+	  right: calc(24% + 225px);
 	  top: 28px;
 	  color: grey;
 
