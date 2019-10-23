@@ -4,10 +4,15 @@
         const mentorTable = document.querySelector(".table.table-hover")
         
         function printDiv(divID) {
+            let box = document.querySelector('.box');
+            document.getElementById("printablediv").removeChild(box)
+           
             //Get the HTML of div
             var divElements = document.getElementById(divID).innerHTML;
+            
             //Get the HTML of whole page
             var oldPage = document.body.innerHTML;
+          
 
             //Reset the page's HTML with div's HTML only
             document.body.innerHTML = "<html><head><title></title></head><body><br><br><br>" + divElements + "</body></html>";
@@ -17,7 +22,7 @@
 
             //Restore orignal HTML
             document.body.innerHTML = oldPage;
-         
+            createPages("printablediv")
         }
 
         
@@ -30,6 +35,7 @@
         
         //To create pages for the Mentor and Intern tables
         const createPages =(tableDivId)=>{
+            
             let box = paginator({
                 table: document.getElementById(tableDivId).getElementsByTagName("table")[0],
                 box_mode: "list",
@@ -129,7 +135,7 @@
         }
 
         const sortStringColumn =(sortDirection,columnName,userData, tableBody)=>{
-            // console.log(userData)
+            
             modifiedUserData = userData.slice(1, userData.length)
             
             if(sortDirection){
@@ -156,7 +162,7 @@
         //get the headers
         headers = [...data[0]]
         csvRows.push(headers.join(','));
-        console.log(headers)
+        
         //loop over the rows
         for(const row of data){
             if (!Array.isArray(row)){
@@ -167,14 +173,14 @@
                 csvRows.push(values.join(','))
             }
         }
-        console.log(csvRows)
+        
         //form escaped CSVs
         return csvRows.join('\n')
     }
 
     const download =(data)=>{
         const blob = new Blob([data], {type: 'text/csv'});
-        console.log(blob)
+        
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.setAttribute('hidden', '');
@@ -217,7 +223,6 @@
    
     const prev = document.querySelector('.left');
     const next = document.querySelector('.right');
-    const navigator = document.querySelector('#navigator')
     let row = 0;
     
     const populateDetails =(id, row)=>{
@@ -239,10 +244,14 @@
     }
     const iterateRow =(e)=>{
         let dataRow = document.querySelectorAll('#my-table tbody tr');
-        let details = document.querySelectorAll('.details span')
+        let details = document.querySelectorAll('.details span');
+        const navigator = document.querySelector('#navigator');
         dataRow = Array.from(dataRow)
     
         if(dataRow.indexOf(e.target.parentElement) >= 0){
+            if (screen.width <= 860){  
+                document.getElementById("details-section").style.left = 0;
+            }
             document.getElementById("no-intern").innerHTML = "";
             navigator.classList.add('active');
             row = dataRow.indexOf(e.target.parentElement) + 1;
@@ -285,14 +294,18 @@
   body.addEventListener('click',(e)=>{
     const overlay = document.querySelector('#overlay');
     const exportModal = document.querySelector('#export-modal');
+    const photo = document.querySelector('#photo')
     
         if(e.target.id === "exportAs"){
-            console.log('I came here')
             overlay.classList.add('visible')
             exportModal.classList.add('visible')
+            photo.style.visibility = "hidden";
+
         }else if(e.target.id === "overlay"){
             overlay.classList.remove('visible')
             exportModal.classList.remove('visible')
+            photo.style.visibility = "";
+           
         }else if(event.target.id === "download"){
             const radioBtn = document.querySelectorAll('input[name="exportOptions"]')
             if(radioBtn[0].checked){
@@ -300,13 +313,15 @@
             }else if(radioBtn[1].checked){
                 getPDF()
             }else{
-                document.querySelector('#message').innerHTML = `<span style="color:red; position:absolute; left:13%; width:100%;">You've not selected an option</span>`
+                document.querySelector('#message').innerHTML = `<span style="color:red; position:absolute; left: 13%; width:100%;">You've not selected an option</span>`
                 setTimeout(()=>{
                     document.querySelector('#message').innerHTML  = '';
                 }, 2000)
             }
         }else if(e.target.tagName === 'TD'){
             iterateRow(e)
+            
+        
         }else if(e.target.classList.contains("right")){
             row++
             iterateRow(e)
@@ -325,12 +340,31 @@
                 })
                     e.target.style.display = "none"         
             }
+            
+        }else if(e.target.className === "details-back"){
+            document.getElementById("details-section").style.left = "100vw"
         }
+        console.log(e.target.id)
+
   })
 
 
 
 
+//   document.getElementById("details-back").addEventListener("click", e => 
+// 	document.getElementById("details-section").style.left = "100vw");
+
+// document.getElementById("details-return").addEventListener("click", e => 
+// 	document.getElementById("details-section").style.left = "100vw");
+
+window.addEventListener("resize", e => 
+{
+	if (screen.width >= 860){
+        document.getElementById("details-section").style.left = "77vw"
+    }else{
+        document.getElementById("details-section").style.left = "100vw"
+    }
+})
 
 
 

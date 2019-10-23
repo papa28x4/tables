@@ -38,19 +38,20 @@ a{
 	position: absolute;
 	right: 24%;
     border-radius: 30px;
-    width:  250px;
+    width:  225px;
 	height: 30px;
-	padding-left: 27px;
+	padding-left: 25px;
 	background-color: #FFFFFF;
 	outline: none;
+	margin-top: 32px;
   }
  
  .fas.fa-search{
 	  position: absolute;
-	  right: calc(24% + 225px);
-	  top: 28px;
+	  right: calc(24% + 200px);
+	  top: 60px;
 	  color: grey;
-
+	  
   }
 #mobile-bars 
 {
@@ -85,8 +86,7 @@ a{
 	/* display: none; */
 }
 #overview-section h2{
-	/* border: 1px solid red; */
-	margin-top: 0px;
+	margin-top: 30px;
 	margin-bottom: 30px;
 }
 #overview-section .exports
@@ -116,11 +116,14 @@ a{
 #details-section h2{
 	margin-top: 15px;
 }
+.scroll{
+	max-height: 60vh;
+	width: 60vw;
+	overflow-y: auto;
+}
 #my-table{
 	width: 60vw;
 	box-sizing: border-box;
-    /* height: 380px; */
-    overflow-y: scroll;
     border-collapse: separate;
 	border-spacing: 0 7px;
 	margin-left: -0.75%;
@@ -170,6 +173,12 @@ i:hover{
 #my-table th:nth-child(3){
 	display:none;
 }
+
+#my-table td:nth-child(1),
+#my-table th:nth-child(1){
+	width: 50px;
+	padding-left: 10px;
+}
 #intern-section
 {
 	max-height: 50vh;
@@ -214,6 +223,8 @@ i:hover{
 {
 	color: rgb(100, 100, 225);
 }
+
+
 #details-section
 {
 	position: fixed;
@@ -221,11 +232,15 @@ i:hover{
 	height: 100vh;
 	top: 0;
 	left: 77vw;
-	width: 20vw;
+	width: 23vw;
 	padding-left: 1rem;
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
 	padding-top: 4rem;
+	display: flex;
+	justify-content: center;
+	
 }
+
 #details-section #details-back
 {
 	cursor: pointer;
@@ -234,7 +249,7 @@ i:hover{
 	height: 50px;
 	border: 1px solid rgb(80, 80, 130);
 	transition: 0.4s ease-out;
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 	margin: 1rem;
 	margin-left: 3rem;
 	display: none;
@@ -344,14 +359,14 @@ i:hover{
     display: flex;
     align-items: center;
 	justify-content: center;
-	/* border: 1px solid red; */
 	width: 60vw;
 	margin-left: -1vw;
 }
 
 .box > *{
     margin: 1em;
-    color: #337ab7;
+	color: #337ab7;
+	/* border: 1px solid blue; */
    
 }
 .box > select{
@@ -360,7 +375,6 @@ i:hover{
 .buttonDiv{
 	display: flex;
 	justify-content: space-evenly;
-	/* border: 1px solid red; */
 	margin-left: 10%;
 	width: 40%;
 }
@@ -446,7 +460,7 @@ i:hover{
 	margin-top: 20px;
 	position: absolute;
 	width: 46%;
-	left: 30%;
+	left: 26%;
 	top: 85%;
 	
 }
@@ -471,14 +485,43 @@ i:hover{
 		padding: 0.5rem;
 		min-height: 100vh;
 	}
+	.scroll{
+		width: 99vw;
+		margin-top: 20px;
+	}
+	#my-table{
+		width: 95%;
+		margin: 0 auto;
+		
+	}
 	#overview-section
 	{
-		width: 90vw;
+		width: 100vw;
 	}
-	#overview-section h1, #overview-section h2
+	#overview-section h2
 	{
 		text-align: center;
+		margin-top: 15px;
+		font-size: 25px;
+		/* margin-left: 2%; */
 	}
+	
+.searchBox {
+
+	margin-top: 55px;
+	
+	left: 50%;
+	transform: translate(-47%);
+  }
+ 
+ .fas.fa-search{
+	  position: absolute;
+	  top: 68px;
+	  left: calc(50% - 95px);
+	  /* transform: translate(-27%); */
+	  color: grey;
+	  
+  }
 	#overview-section .exports
 	{
 		padding: 0.5rem 1.5rem;
@@ -486,38 +529,29 @@ i:hover{
 		border-radius: 5px;
 		margin: 3rem auto;
 	}
-	#intern-section
-	{
-		max-height: 60vh;
+	
+	#centralize{
+		/* border: 1px solid blue; */
+		justify-self: center;
 	}
-	#intern-section .intern
-	{
-		font-size: 14px;
-	}
-	#intern-section .intern .name
-	{
-		display: inline-block;
-		width: 50%;
-	}
-	#intern-section .intern .email
-	{
-		width: 50%;
-		display: inline-block;
-	}
-	#intern-section .intern .track
-	{
-		width: 0;
-		display: none;
+	#details-back{
+		border: 1px solid green;
+		justify-self: self-start;
+		align-self: center;
+		/* margin-bottom: 0; */
 	}
 	#details-section
-	{
+	{	display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 100px 60vh;
+		/* justify-content: space-between; */
 		background-color: rgb(240, 240, 240);
-		z-index: 2;
+		z-index: 5;
 		width: 100vw;
 		transition: 0.4s ease-out;
 		left: 100vw;
 		font-size: 17px;
-		position: relative;
+		
 	}
 	#details-section #details-back
 	{
@@ -566,5 +600,58 @@ i:hover{
     #mobile-bars-check:checked ~ #sidebar
     {
         left: 0;
-    }
+	}
+	.box{
+		margin: 0 auto;
+		width: 95vw;
+	}
+	.buttonDiv{
+		margin: 0 auto;
+		width: 80%;
+	}
+	
 }
+	@media (max-width: 500px){
+		#details-section{
+			font-size: 12px;
+			left: 100vw;
+		}
+		#details-section h2 {
+			margin-top: 0;
+		}
+		#navigator{
+			margin-top: 0;
+		}
+		#my-table>thead>tr>th,
+		#my-table>tbody>tr>td {
+			/* text-align: center; */
+			
+		}
+		
+		#my-table>tbody>tr>td:nth-child(1){
+			padding-left: 15px;
+		}
+		#my-table td:nth-child(2),
+		#my-table th:nth-child(2){
+			display: none;
+		}
+		.box{
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			width: 95vw;
+		}
+		
+		.box>span{
+			grid-column: 1/3;
+			text-align: center;
+		}
+		.buttonDiv{
+			margin: 0 auto;
+			width: 80%;
+		}
+	}
+	@media (max-width: 330px){
+		#navigator{
+			margin-top: 25px;
+		}
+	}

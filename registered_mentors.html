@@ -37,7 +37,7 @@
 	
 </head>
 <body>
-	<main>
+	<main class="reg">
         <div id="overlay"></div>
         <div id="export-modal">
             <div>
@@ -220,13 +220,14 @@
 		
 		</section>
 		<section id="details-section">
-			<div id="details-back">
-                <div>
-                    <a href="overview.html" id="newitem-go-back" title="Go back">
+			<div id="details-back" class="details-back">
+                <div class="details-back">
+                    <!-- <a href="overview.html" id="newitem-go-back" title="Go back">
                         <div></div>
-                    </a>
+                    </a> -->
                 </div>
             </div>
+            <div id="centralize">
 			<h2>Mentor Details</h2>
 			<em id="no-intern">No mentor selected</em>
             <br />
@@ -240,14 +241,12 @@
             <p class="details">Employment Status: <span id="employment-status"></span></p>
             <p class="details">Why Interested: <span id="Interest"></span></p>
             <p class="details">Timestamp: <span id="timeStamp"></span></p>
-            <div href="" id="details-return">Back to Overview</div>
+            <!-- <div href="" id="details-return">Back to Overview</div> -->
             <div id="navigator">
                 <i class="fas fa-chevron-left fa-2x left navigator"></i> 
-                <!-- <img class="left navigator" src="images/left.PNG"> -->
-                 <p class="details"><span id="sn"></span></p>
-                <!-- <img class="right navigator" src="images/right.PNG"> -->
-                
+                <p class="details"><span id="sn"></span></p>
                 <i class="fas fa-chevron-right fa-2x right navigator"></i>
+            </div>
             </div>
 		</section>
 	</main>
@@ -286,7 +285,6 @@
     <script src="js/jspdf.js"></script>
     <script src="js/jspdf.plugin.autotable.min.js"></script>
     <script src="js/paginator.js"></script>
-    <script type="text/javascript" src="js/dashboard.js"></script>
     <script type="text/javascript" src="js/admindashboard.js"></script>
 </body>
 
