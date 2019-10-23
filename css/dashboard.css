@@ -177,6 +177,9 @@ i:hover{
 #my-table td:nth-child(1),
 #my-table th:nth-child(1){
 	width: 50px;
+	padding-left: 15px;
+}
+#my-table th:nth-child(1){
 	padding-left: 10px;
 }
 #intern-section
@@ -247,7 +250,7 @@ i:hover{
 	border-radius: 50%;
 	width: 50px;
 	height: 50px;
-	border: 1px solid rgb(80, 80, 130);
+	border: 2px solid rgb(80, 80, 130);
 	transition: 0.4s ease-out;
 	transform: rotate(90deg);
 	margin: 1rem;
@@ -259,10 +262,10 @@ i:hover{
 	width: 20px;
 	height: 20px;
 	margin: 17px auto;
-	border-top: 1px solid rgb(80, 80, 130);
+	border-top: 2px solid rgb(80, 80, 130);
 	border-right: 1px solid transparent;
 	border-bottom: 1px solid transparent;
-	border-left: 1px solid rgb(80, 80, 130);
+	border-left: 2px solid rgb(80, 80, 130);
 	transform: rotate(45deg);
 }
 #details-section #details-return
@@ -616,18 +619,21 @@ i:hover{
 			font-size: 12px;
 			left: 100vw;
 		}
-		#details-section h2 {
-			margin-top: 0;
-		}
+		
 		#navigator{
 			margin-top: 0;
 		}
-		#my-table>thead>tr>th,
-		#my-table>tbody>tr>td {
-			/* text-align: center; */
-			
+		#details-section{	
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 100px 60vh;	
 		}
-		
+		/* #details-section #details-back{
+			border-width: 2px;
+		}
+		#details-section #details-back>*{
+			border-width: 2px;
+		} */
 		#my-table>tbody>tr>td:nth-child(1){
 			padding-left: 15px;
 		}
@@ -650,8 +656,13 @@ i:hover{
 			width: 80%;
 		}
 	}
-	@media (max-width: 330px){
+	@media (max-width: 375px){
 		#navigator{
-			margin-top: 25px;
+			margin-top: 30px;
+		}
+		#details-section{	
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 50px 60vh;	
 		}
 	}
