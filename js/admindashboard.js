@@ -1,3 +1,8 @@
+        
+        
+        const body = document.querySelector('body')
+        const mentorTable = document.querySelector(".table.table-hover")
+        
         function printDiv(divID) {
             //Get the HTML of div
             var divElements = document.getElementById(divID).innerHTML;
@@ -12,13 +17,14 @@
 
             //Restore orignal HTML
             document.body.innerHTML = oldPage;
+         
         }
 
         
 
-        const mentorTable = document.querySelector(".table.table-hover")
+        
         // const internTable = document.querySelector("#table_interns table")
-        const tableHeaders = document.querySelectorAll('#my-table thead tr th');
+        
         
         let sortDirection = false;
         
@@ -135,35 +141,14 @@
             loadTable(userData,tableBody)
         }
 
-        
-        tableHeaders.forEach(tableHeader => {
-            tableHeader.addEventListener('click', (e)=>{
-            
-            if(e.target.tagName == 'I'){
-                const tableBody = e.target.parentElement.parentElement.parentElement.nextElementSibling
-    
-                const columnName = e.target.parentElement.dataset.heading
-                
-                    sortColumn(columnName, mentorData,tableBody)
-                    Array.from(e.target.parentElement.children).forEach(child=>{
-                    child.style.display = ""
-                })
-                    e.target.style.display = "none"         
-                }
-        })
-    })
-
-    
-
+             
     /////////EXPORT TO PDF//////////////////////////////////////////             
     const getPDF =()=>{
         let doc = new jsPDF()
         doc.autoTable({html: '.table.table-hover'});
         doc.save('Lists.pdf')
     }
-    
-   
-                 
+                  
     /////////EXPORT TO CSV/////////////////////////////////////////
     const objectToCSV =(data)=>{
         const csvRows = [];
@@ -207,8 +192,8 @@
 
     
     ////////////////////SEARCH//////////////////////////////////
-    const searchBox = document.querySelector('.searchBox');
-    const filterEntries =()=>{
+    
+    const filterEntries =(searchBox)=>{
         const entries = document.querySelectorAll('tbody tr');
         const searchBoxValue = searchBox.value.toLowerCase();
     
@@ -226,36 +211,7 @@
         })
     }
     
-
-    ////////////////Event Listeners////////////////////////////////////////
-    const exportAs = document.querySelector("#exportAs");
-    const overlay = document.querySelector('#overlay')
-    const exportModal = document.querySelector('#export-modal')
-    searchBox.addEventListener('keyup', filterEntries)
-    exportAs.addEventListener('click',()=>{
-        overlay.classList.add('visible')
-        exportModal.classList.add('visible')
-    })
-    overlay.addEventListener('click',()=>{
-        overlay.classList.remove('visible')
-        exportModal.classList.remove('visible')
-    })
-    exportModal.addEventListener('click', ()=>{
-        if(event.target.id === "download"){
-            const radioBtn = document.querySelectorAll('input[name="exportOptions"]')
-            if(radioBtn[0].checked){
-                getCSV()
-            }else if(radioBtn[1].checked){
-                getPDF()
-            }else{
-                document.querySelector('#message').innerHTML = `<span style="color:red; position:absolute; left:13%; width:100%;">You've not selected an option</span>`
-                setTimeout(()=>{
-                    document.querySelector('#message').innerHTML  = '';
-                }, 2000)
-            }
-        }
-    } )
-
+  
     /////////More Details SideBar/////////////////////////////////////////
 
    
@@ -313,72 +269,76 @@
         
     }
     
-    
+        
+  ////////////////Event Listeners////////////////////////////////////////
+ 
+  body.addEventListener('keyup',(e)=>{
+    const searchBox = document.querySelector('.searchBox');
    
-    
-    mentorTable.addEventListener('click', (e)=>{
-       iterateRow(e)
-        
-    })
+    if(e.target.classList.contains('searchBox')){
+        filterEntries(searchBox)
+    }
+  })
 
-   
-    //////////Details SideBar Navigation////////////////////////////////////////
-    
-        // const placeholder = document.querySelector('.did-you-know p')
-       
-        
-        
-        const funFacts = ["Solar is a safe alternative to current fossil fuels like coal, petrol and gas. Solar panels reduce both global warming and urban heat island. The production of solar energy in cities is a way to diminish our dependence on fossil fuels and mitigate global warming by lowering the emission of greenhouse gases.", "There's enough solar energy hitting the Earth every hour to meet all of humanity's power needs for an entire year. Every ounce of oil, every lump of coal, and every cubic foot of natural gas could be left in the ground if only we could capture one hour's worth of solar energy each year. That's the scale of the opportunity.", "Solar energy has been used for over 2700 years. In 700 BC, glass lenses were used to make fire by magnifying the sun’s rays. Moreover, the Greeks and Romans were the first to use passive solar designs. Buildings with south facing windows allowed the sun to heat and light indoor spaces.", "Nearly 60 years ago, the US Navy launched Vanguard-1  — the first artificial earth satellite powered by solar cells — as a response to the Soviet Sputnik. Six decades on, it's still circling our planet. The Vanguard 1 remains the oldest manmade satellite in orbit – logging more than 6 billion miles."]
-        let length = funFacts.length
-        let index = 0;
-        // placeholder.innerHTML = funFacts[index]
-       
-        
-        
-        const displayText =()=>{
-            indicators[index].classList.add('active')
-            placeholder.innerHTML = funFacts[index]
-        }
-        
-        // indicatorBox.addEventListener('click', e =>{
-            
-        //     if(e.target.classList.contains('indicator')){
-        //         if(!e.target.classList.contains('active')){
-        //             indicators[index].classList.remove('active')
-        //             index = indicators.indexOf(e.target)
-        //             displayText()
-        //         }
-        //     }
-        // })
 
-        next.addEventListener('click', (e)=>{
-            console.log(e.target.className)
+
+  body.addEventListener('click',(e)=>{
+    const overlay = document.querySelector('#overlay');
+    const exportModal = document.querySelector('#export-modal');
+    
+        if(e.target.id === "exportAs"){
+            console.log('I came here')
+            overlay.classList.add('visible')
+            exportModal.classList.add('visible')
+        }else if(e.target.id === "overlay"){
+            overlay.classList.remove('visible')
+            exportModal.classList.remove('visible')
+        }else if(event.target.id === "download"){
+            const radioBtn = document.querySelectorAll('input[name="exportOptions"]')
+            if(radioBtn[0].checked){
+                getCSV()
+            }else if(radioBtn[1].checked){
+                getPDF()
+            }else{
+                document.querySelector('#message').innerHTML = `<span style="color:red; position:absolute; left:13%; width:100%;">You've not selected an option</span>`
+                setTimeout(()=>{
+                    document.querySelector('#message').innerHTML  = '';
+                }, 2000)
+            }
+        }else if(e.target.tagName === 'TD'){
+            iterateRow(e)
+        }else if(e.target.classList.contains("right")){
             row++
             iterateRow(e)
-            
-            // console.log(row)
-        //     indicators[index].classList.remove('active')
-        //     if(index === length - 1){
-        //         index = 0
-        //     }else{
-        //         index++
-        //     }
-        //    displayText()
-        })
-
-        prev.addEventListener('click', (e)=>{
+        }else if(e.target.classList.contains("left")){
             row--
             iterateRow(e)
-            // console.log(row)
-            // indicators[index].classList.remove('active')
-            // if(index === 0){
-            //     index = length - 1
-            // }else{
-            //     index --
-            // }
-            // displayText()
-        })
+        }else if(e.target.parentElement.tagName === 'TH' ){
+            if(e.target.tagName == 'I'){
+                const tableBody = e.target.parentElement.parentElement.parentElement.nextElementSibling
+        
+                const columnName = e.target.parentElement.dataset.heading
+                
+                    sortColumn(columnName, mentorData,tableBody)
+                    Array.from(e.target.parentElement.children).forEach(child=>{
+                    child.style.display = ""
+                })
+                    e.target.style.display = "none"         
+            }
+        }
+  })
 
 
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
